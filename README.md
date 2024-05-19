@@ -1,2 +1,6 @@
 # FCC-Rock-Paper-Scissors
- A follow along project to Review DOM Manipulation in JavaScript
+ A mini follow along project to review DOM Manipulation in JavaScript.
+
+ ## Scope
+ This mini project reviewed JavaScript only. The HTML and CSS were provided.
+
