@@ -1,6 +1,3 @@
-
-
-
 function getRandomComputerResult() {
     const options = ["Rock", "Paper", "Scissors"];
     const min = 0
@@ -10,3 +7,21 @@ function getRandomComputerResult() {
 };
 
 console.log(getRandomComputerResult());
+
+function hasPlayerWonTheRound (player, computer) {
+    if (player == "Rock" && computer == "Scissors") {
+        return true;
+    }
+    if (player == "Scissors" && computer == "Paper") {
+        return true;
+    }
+    if (player == "Paper" && computer == "Rock") {
+        return true;
+    }
+    else {
+        return false;
+    }
+};
+
+
+console.log(hasPlayerWonTheRound("Rock", "Paper"));
