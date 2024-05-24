@@ -57,16 +57,34 @@ function showResults(userOption) {
     playerScoreSpanElement.innerText = playerScore;
     computerScoreSpanElement.innerText = computerScore;
     roundResultsMsg.innerText = getRoundResults(userOption);
-    if (hasPlayerWonTheRound) {
+    if (playerScore === 3) {
         winnerMsgElement.innerText = "Player has won the game!";
-        resetGameBtn.style.display = "none";
-        optionsContainer.style.display = "hidden";
+        resetGameBtn.style.display = "show";
+        optionsContainer.style.display = "none";
     }
-    else {
+    else if (computerScore === 3) {
         winnerMsgElement.innerText = "Computer has won the game!";
-        resetGameBtn.style.display = "none";
-        optionsContainer.style.display = "hidden";
+        resetGameBtn.style.display = "show";
+        optionsContainer.style.display = "none";
     }
 };
+
+const rockBtn = document.getElementById("rock-btn");
+const paperBtn = document.getElementById("paper-btn");
+const scissorsBtn = document.getElementById("scissors-btn");
+
+rockBtn.addEventListener("click", function() {
+    showResults("Rock");
+});
+
+paperBtn.addEventListener("click", function() {
+    showResults("Paper");
+});
+
+scissorsBtn.addEventListener("click", function() {
+    showResults("Scissors");
+});
+
+
 
 console.log(showResults("Rock"));
