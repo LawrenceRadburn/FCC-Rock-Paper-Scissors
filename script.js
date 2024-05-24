@@ -49,11 +49,24 @@ console.log("Player Score: ", playerScore, "Computer Score ", computerScore);
 const playerScoreSpanElement = document.getElementById("player-score");
 const computerScoreSpanElement = document.getElementById("computer-score");
 const roundResultsMsg = document.getElementById("results-msg");
+const winnerMsgElement = document.getElementById("winner-msg");
+const optionsContainer = document.querySelector(".options-container");
+const resetGameBtn = document.getElementById("reset-game-btn");
 
 function showResults(userOption) {
     playerScoreSpanElement.innerText = playerScore;
     computerScoreSpanElement.innerText = computerScore;
-    roundResultsMsg.innerText = getRoundResults("Rock");
+    roundResultsMsg.innerText = getRoundResults(userOption);
+    if (hasPlayerWonTheRound) {
+        winnerMsgElement.innerText = "Player has won the game!";
+        resetGameBtn.style.display = "none";
+        optionsContainer.style.display = "hidden";
+    }
+    else {
+        winnerMsgElement.innerText = "Computer has won the game!";
+        resetGameBtn.style.display = "none";
+        optionsContainer.style.display = "hidden";
+    }
 };
 
 console.log(showResults("Rock"));
